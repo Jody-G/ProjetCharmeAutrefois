@@ -1,6 +1,6 @@
-## ProjetCharmeAutrefois
+### ProjetCharmeAutrefois
 
-Projet ayant pour but créer un site personnel pour une cliente, lui permettant de partager diverses réalisations.
+Projet ayant pour but créer un site personnel pour une cliente, lui permettant de partager ses réalisations.
 
 ## Technologies utilisées
 
@@ -33,3 +33,8 @@ Projet ayant pour but créer un site personnel pour une cliente, lui permettant 
 ## Envoi d'email avec Mailer
 
 * "symfony console app:send-contact"
+
+## Identifiants login (provisoire)
+
+* Email: admin@test.com
+* Pass: password
