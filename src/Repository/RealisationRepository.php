@@ -19,6 +19,18 @@ class RealisationRepository extends ServiceEntityRepository
         parent::__construct($registry, Realisation::class);
     }
 
+    /**
+     * @return Realisation[] Returns an array of Realisation objects
+     */
+    public function findThree()
+    {
+        return $this->createQueryBuilder('r')
+            ->orderBy('r.id', 'ASC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
     // /**
     //  * @return Realisation[] Returns an array of Realisation objects
     //  */
