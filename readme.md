@@ -20,3 +20,7 @@ Projet ayant pour but créer un site personnel pour une cliente, lui permettant 
 * yarn install
 * yarn encore dev --watch
 * symfony server:start -d
+
+## Lancement des tests
+
+* php bin/phpunit --testdox
