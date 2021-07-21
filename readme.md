@@ -22,12 +22,14 @@ Projet ayant pour but créer un site personnel pour une cliente, lui permettant 
 * yarn encore dev --watch
 * symfony server:start -d
 
-## Ajout des fixtures
+## Mise à jour de la base de données
 
-* "symfony console doctrine:fixtures:load"
-ou
-* commande personnalisé: "composer SuperDFL"
+* commande personnalisé: "composer SuperDFL" (voir dans composer.json)
 
 ## Lancement des tests
 
 * "php bin/phpunit --testdox"
+
+## Envoi d'email avec Mailer
+
+* "symfony console app:send-contact"
