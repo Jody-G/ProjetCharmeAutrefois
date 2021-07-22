@@ -4,10 +4,11 @@
 
 {% block body %}
 
+<section class="news">
 <h1> Toutes les actualités </h1>
-
+<br>
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row row-cols-3">
         {% for actualite in actualites %}
         <div class="col">
             <div class="card" style="width: 18rem;">
@@ -16,14 +17,15 @@
                     <h5 class="card-title">{{ actualite.titre }}</h5>
                     <p class="card-text">{{ actualite.contenu }}</p>
                     <p class="card-text">Publié le {{ actualite.createdAt|date('d/m/y') }}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="{{ path('actualite_show', {'slug': actualite.slug}) }}" class="btn btn-primary">En Savoir Plus</a>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
-
+</section>
+<br>
 <div class="d-flex justify-content-center">
     {% do actualites.setPageRange(2) %}
     {{ knp_pagination_render(actualites, 'elements/_pagination.html.twig') }}

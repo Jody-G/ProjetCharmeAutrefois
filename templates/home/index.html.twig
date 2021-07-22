@@ -4,43 +4,49 @@
 
 {% block body %}
 
-<h1> Actualités </h1>
-
-<div class="container">
-<div class="row">
-{% for actualite in actualites %}
-<div class="card" style="width: 18rem;">
-  <img src="{{ actualite.file }}" alt="..."/>
-  <div class="card-body">
-    <h5 class="card-title">{{ actualite.titre }}</h5>
-    <p class="card-text">{{ actualite.contenu }}</p>
-    <p class="card-text">Publié le {{ actualite.createdAt|date('d/m/y') }}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-{% endfor %}
-</div>
-</div>
-
+<section class="accueil">
+<h1> Dernières Actualités </h1>
 <br>
-
-<h1> Realisations </h1>
-
 <div class="container">
-<div class="row">
-{% for realisation in realisations %}
-<div class="card" style="width: 18rem;">
-  <img src="{{ realisation.file }}" alt="..."/>
-  <div class="card-body">
-    <h5 class="card-title">{{ realisation.nom }}</h5>
-    <p class="card-text">{{ realisation.description }}</p>
-    <p class="card-text">Publié le {{ realisation.createdAt|date('d/m/y') }}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="row justify-content-center">
+  {% for actualite in actualites %}
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+      <img src="{{ actualite.file }}" alt="..."/>
+      <div class="card-body">
+        <h5 class="card-title">{{ actualite.titre }}</h5>
+        <p class="card-text">{{ actualite.contenu }}</p>
+        <p class="card-text">Publié le {{ actualite.createdAt|date('d/m/y') }}</p>
+        <a href="{{ path('actualite_show', {'slug': actualite.slug}) }}" class="btn btn-primary">En Savoir Plus</a>
+      </div>
+      </div>
+    </div>
+  {% endfor %}
   </div>
 </div>
-{% endfor %}
+</section>
+
+<section class="accueil">
+<h1> Dernières Realisations </h1>
+<br>
+<div class="container">
+  <div class="row justify-content-center">
+  {% for realisation in realisations %}
+  <div class="col">
+    <div class="card" style="width: 18rem;">
+      <img src="{{ realisation.file }}" alt="..."/>
+      <div class="card-body">
+        <h5 class="card-title">{{ realisation.nom }}</h5>
+        <p class="card-text">{{ realisation.description }}</p>
+        <p class="card-text">Publié le {{ realisation.createdAt|date('d/m/y') }}</p>
+        <a href="{{ path('realisation_show', {'slug': realisation.slug}) }}" class="btn btn-primary">En Savoir Plus</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
 </div>
-</div>
+</section>
 
 
 {% endblock %}

@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Categorie;
 use App\Entity\Realisation;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -25,12 +26,26 @@ class RealisationRepository extends ServiceEntityRepository
     public function findThree()
     {
         return $this->createQueryBuilder('r')
-            ->orderBy('r.id', 'ASC')
+            ->orderBy('r.id', 'DESC')
             ->setMaxResults(3)
             ->getQuery()
             ->getResult()
         ;
     }
+
+    /**
+     * @return Realisation[] Returns an array of Peinture objects
+     */
+    public function findAllRealisation(Categorie $categorie): array
+    {
+        return $this->createQueryBuilder('r')
+        ->where(':categorie MEMBER OF r.categorie')
+        ->setParameter('categorie', $categorie)
+        ->getQuery()
+        ->getResult()
+        ;
+    }
+
     // /**
     //  * @return Realisation[] Returns an array of Realisation objects
     //  */

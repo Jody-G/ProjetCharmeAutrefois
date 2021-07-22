@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello actualiteController!{% endblock %}
+
+{% block body %}
+
+<section class="actualite">
+<h1> Détail de l'actualité </h1>    
+<br>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+        <img src="{{ actualite.file }}" alt="..."/>
+        <div class="card-body">
+            <h5 class="card-title">{{ actualite.titre }}</h5>
+            <p class="card-text">{{ actualite.contenu }}</p>
+            <p class="card-text">Publié le {{ actualite.createdAt|date('d/m/y') }}</p>
+            <a href="#" class="btn btn-primary">En Savoir Plus</a>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
+</section>
+
+{% endblock %}

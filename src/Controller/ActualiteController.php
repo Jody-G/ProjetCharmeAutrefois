@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Actualite;
 use App\Repository\ActualiteRepository;
+use App\Repository\CategorieRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,6 +31,16 @@ class ActualiteController extends AbstractController
 
         return $this->render('actualite/index.html.twig', [
             'actualites' => $actualites,
+        ]);
+    }
+
+    /**
+     * @Route("/actualite/{slug}", name="actualite_show")
+     */
+    public function show(Actualite $actualite): Response
+    {
+        return $this->render('actualite/show.html.twig', [
+            'actualite' => $actualite
         ]);
     }
 }
