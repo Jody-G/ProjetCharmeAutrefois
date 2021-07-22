@@ -22,7 +22,7 @@ Projet ayant pour but créer un site personnel pour une cliente, lui permettant 
 * yarn encore dev --watch
 * symfony server:start -d
 
-## Mise à jour de la base de données
+## Mise à jour de la base de données + Fixtures
 
 * commande personnalisé: "composer SuperDFL" (voir dans composer.json)
 
