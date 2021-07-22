@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RealisationController!{% endblock %}
+
+{% block body %}
+
+<section class="realisations">
+<h1> Realisations par categorie </h1>    
+<br>
+<div class="container">
+  <div class="row justify-content-center">
+  {% for realisation in realisations %}
+  <div class="col">
+    <div class="card" style="width: 18rem;">
+      <img src="{{ realisation.file }}" alt="..."/>
+      <div class="card-body">
+        <h5 class="card-title">{{ realisation.nom }}</h5>
+        <p class="card-text">{{ realisation.description }}</p>
+        <p class="card-text">Publié le {{ realisation.createdAt|date('d/m/y') }}</p>
+        <a href="{{ path('realisation_show', {'slug': realisation.slug}) }}" class="btn btn-primary">En Savoir Plus</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+</div>
+</section>
+
+{% endblock %}

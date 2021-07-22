@@ -25,7 +25,7 @@ class ActualiteRepository extends ServiceEntityRepository
     public function findThree()
     {
         return $this->createQueryBuilder('a')
-            ->orderBy('a.id', 'ASC')
+            ->orderBy('a.id', 'DESC')
             ->setMaxResults(3)
             ->getQuery()
             ->getResult()

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\ActualiteRepository;
+use App\Repository\CategorieRepository;
 use App\Repository\RealisationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;

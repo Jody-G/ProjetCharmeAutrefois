@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light princip">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Charme d'autrefois</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,9 +17,13 @@
             Réalisations
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Décoration</a></li>
-            <li><a class="dropdown-item" href="#">Gastronomie</a></li>
+          {% for categorie in categorieNavbar() %}
+            <li><a class="dropdown-item" href="{{ path('realisation', {id: categorie.id}) }}">{{ categorie.nom }}</a></li>
+          {% endfor %}
           </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/a_propos">A Propos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/contact">Me contacter</a>
