@@ -19,12 +19,16 @@ Projet ayant pour but créer un site personnel pour une cliente, lui permettant 
 * composer install
 * docker-compose up -d
 * yarn install
-* yarn encore dev --watch
+* yarn encore dev
 * symfony server:start -d
+
+## Ajout de la base de données + Fixtures
+
+* composer DataStart
 
 ## Mise à jour de la base de données + Fixtures
 
-* commande personnalisé: "composer SuperDFL" (voir dans composer.json)
+* composer SuperDFL
 
 ## Lancement des tests
 
